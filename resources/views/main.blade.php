@@ -6,7 +6,8 @@
 <body class="grad1">
     @include('partials._nav')
     @yield('content')
-    @include('partials._footer')  
+    @include('partials._footer')
+           hello 
             
 </body>
 </html>
