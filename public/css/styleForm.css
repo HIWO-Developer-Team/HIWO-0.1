@@ -1,0 +1,49 @@
+
+.row_main_1{
+	margin-top: -3%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 2%;
+}
+.main-login {
+	color: rgba(84,85,86,0.90);
+
+}
+.fheading{
+	color:rgba(100, 100, 100,0.90);
+
+}
+
+
+.form-group-1
+{
+	color:rgb(110,110,110);
+	margin: 3%;
+}
+.form-group-2
+{
+  color:rgb(110,110,110);
+  margin: none;
+}
+
+
+.btn,
+.active {
+	transition: .4s;
+}
+.grad1 {
+    height: 100%;
+    background: -webkit-linear-gradient(-90deg,rgb(194,194,194) , rgb(218,218,218) , rgb(194,194,194) ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg,rgb(194,194,194) , rgb(218,218,218) , rgb(194,194,194) ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg,rgb(194,194,194) , rgb(218,218,218) , rgb(194,194,194) ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg,rgb(194,194,194) , rgb(218,218,218) , rgb(194,194,194) ); /* Standard syntax (must be last) */
+}
+hr.style1{
+  border: 0; 
+  height: 3px;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset; 
+  background-image: -webkit-linear-gradient(left, rgb(194,194,194),  rgb(180,180,180), rgb(194,194,194));
+  background-image: -moz-linear-gradient(left, rgb(194,194,194),  rgb(180,180,180), rgb(194,194,194));
+  background-image: -ms-linear-gradient(left, rgb(194,194,194),  rgb(180,180,180), rgb(194,194,194));
+  background-image: -o-linear-gradient(left, rgb(194,194,194),  rgb(180,180,180), rgb(194,194,194));
+}
