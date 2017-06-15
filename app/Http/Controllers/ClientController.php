@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Job;
+use App\Client;
 use Session;
 
-class JobController extends Controller
+class ClientController extends Controller
 {
-
-        public function __construct()
+  
+    public function __construct()
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +21,7 @@ class JobController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -31,8 +31,7 @@ class JobController extends Controller
      */
     public function create()
     {
-             return view('forms.addJobForm');
-
+        return view('forms.addClientForm');
     }
 
     /**
@@ -43,39 +42,37 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-//        // validate the data
+    //        // validate the data
         $this->validate($request, array(
-          'jobTitle'  => 'required|max:50',
-          'industry'  => 'required',
-          'vacancies' => 'numeric|required',
-          'experience'=> 'numeric|required',
-          'salary'    => 'numeric|required',
-          'location'  => 'required',
-          'phone'     => 'numeric|required',
-          'email'     => 'email|required'
+          'first_name' => 'required|max:50',
+          'last_name'  => 'required|max:50',
+          'company'    => 'max:50',
+          'industry'   => 'max:50',
+          'address'     => 'required',
+          'phone'      => 'numeric|required',
+          'email'      => 'email|required'
         ));
 //      
       //store in the database
-      $job = new job;
+      $client = new client;
 
-      $job->jobTitle = $request->jobTitle;
-      $job->industry = $request->industry;
-      $job->vacancies = $request->vacancies;
-      $job->company = $request->company;
-      $job->description = $request->description;
-      $job->salary = $request->salary;
-      $job->experience = $request->experience;
-      $job->location = $request->location;
-      $job->phone = $request->phone;
-      $job->email = $request->email;
-      $job->user_id = Auth::id();
+      $client->first_name = $request->first_name;
+      $client->middle_name = $request->middle_name;
+      $client->last_name = $request->last_name;
+      $client->company = $request->company;
+      $client->description = $request->description;
+      $client->industry = $request->industry;
+      $client->address = $request->address;
+      $client->phone = $request->phone;
+      $client->email = $request->email;
+      $client->user_id = Auth::id();
 
-      $job->save();
+      $client->save();
       
-      Session::flash('success', 'The job was successfully posted!');
+      Session::flash('success', 'The Profile was successfully submitted!');
       
       //redirect to another page
-      return redirect()->route('job.show', $job->id);
+      return redirect()->route('client.show', $client->id);
     }
 
     /**
@@ -86,7 +83,7 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        return redirect()->route('home');
+        //
     }
 
     /**
