@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/job','JobController');
 
+Route::resource('/client','ClientController');
+
 Route::get('/test', function () {
     return view('forms.testForm');
 });

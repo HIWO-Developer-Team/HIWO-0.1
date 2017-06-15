@@ -20,12 +20,14 @@ class CreateJobsTable extends Migration
             $table->string('company')->nullable();
             $table->string('vacancies');
             $table->string('description')->nullable();
-            $table->string('salary');
-            $table->string('experience');
+            $table->integer('salary');
+            $table->integer('experience');
             $table->string('location');
-            $table->string('phone');
+            $table->bigInteger('phone');
             $table->string('email');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

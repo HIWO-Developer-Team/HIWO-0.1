@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Job;
 use Session;
 
@@ -67,6 +68,7 @@ class JobController extends Controller
       $job->location = $request->location;
       $job->phone = $request->phone;
       $job->email = $request->email;
+      $job->user_id = Auth::id();
 
       $job->save();
       
