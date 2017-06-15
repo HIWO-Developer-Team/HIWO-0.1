@@ -23,6 +23,8 @@ Route::resource('/job','JobController');
 
 Route::resource('/client','ClientController');
 
+Route::resource('/jobseeker','JobSeekerController');
+
 Route::get('/test', function () {
     return view('forms.testForm');
 });
